@@ -638,7 +638,7 @@ ul {
 /* subscribe */
 .subscribe-section {
   display: block;
-  margin-left: 93px;
+  margin-left: auto;
 }
 .subscribe-title {
   color: var(--footer-color-list-adress);
@@ -656,6 +656,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;  
   padding: 15px 16px;
+  color: var(--primary-text-color);
 }
 .subscribe-button {
   display: flex;
@@ -664,11 +665,15 @@ ul {
   width: 200px;
   height: 50px;
   background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
   color: var(--button-filtr-font-active);
   border-radius: 4px;
   margin-left: 12px;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 .svg-send {
   margin-left: 10px;
@@ -818,7 +823,6 @@ ul {
   
   .modal {
     width: 528px;
-    height: 581px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -842,6 +846,7 @@ ul {
     background-color: var(--button-filtr-font-active);
     border-radius: 50%;
     cursor: pointer;
+
   }
   
   .is-hidden {
@@ -852,6 +857,7 @@ ul {
   
   .modal .close-sign .svg-close {
     fill: var(--header-logo-last-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 .modal .close-sign .svg-close:hover {
   fill: var(--accent-color) ;
@@ -866,9 +872,10 @@ ul {
   margin-bottom: 12px;
 }
   .modal-form {
-    padding: 0px;
   }
-  
+  .input-line {
+    margin-bottom: 10px; 
+  }
   .modal-input {
     width: 100%;
     height: 40px;
@@ -879,13 +886,13 @@ ul {
     padding-left: 42px;
     font-size: 16px;
     color: var(--title-text-color);
-    transition: color 5250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: 0;  /* вот точ то меня сбивало и не окрашивало бордер в голубой */
+    }
   
   .modal-input:hover, .modal-input:focus, 
   .modal-input:focus-within, .modal-input:focus-visible  {
-    border: 1px solid var(--accent-color);
-    outline: 2px red;
+    border-color: var(--accent-color);
   }
 
   .modal-textarea {
@@ -909,7 +916,6 @@ ul {
 
   .modal-label  {
     display: inline-block;
-    width: 100%;
     margin-bottom: 4px;
     font-size: 12px;
     color: var(--primary-text-color);
@@ -917,7 +923,7 @@ ul {
   
   .input-wrapper {
     position: relative;
-    margin-bottom: 10px;
+
   }
   
   .input-wrapper input {
@@ -930,7 +936,7 @@ ul {
     top: 50%;
     transform: translateY(-50%);
     fill: var(--button-filtr-font);
-    transition: color 2250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .modal-input:focus + .input-icon,
@@ -939,19 +945,20 @@ ul {
   }
 
   .check-line {
-    margin: 10px 0;
+    /* display: block; */
+    margin: 10px auto 0;
   }
   
   .checkbox-agree {
     display: flex;
     align-items: center;
-    margin-top: 20px;
   }
   
   .checkbox-agree .icon-wrapper {
     width: 16px;
     height: 15px;
     border: 1px solid var(--button-filtr-font);
+    border-radius: 2px;
     margin-right: 8px;
     display: flex;
     align-items: center;
@@ -963,7 +970,7 @@ ul {
   }
   
   .check-line input:checked + .checkbox-agree .icon-wrapper {
-    background-color: white;
+    background-color: var(--background-color-button);
     border: none;
   }
   
@@ -984,7 +991,8 @@ ul {
     color: var(--accent-color);
   }
   .modal-button {
-    /* font-family: inherit; */
+    display: block;
+    padding: 10px 52px;
     font-weight: 700;
     font-size: 16px;
     line-height: calc(30 / 16);
@@ -992,9 +1000,13 @@ ul {
     background-color: var(--background-color-button);
     border-radius: 4px;
     border: none;
-    padding: 10px 52px;
-    /* margin-top: 30px; */
-    margin-top: 20px;
-    margin-left: 124px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    margin: 20px auto 0;
+    /* маржин равнения */
+   }
 
+   .modal-button:hover, .modal-button:active {
+    cursor: pointer;
+    background-color: var(--button-bkg-mouse);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
    }
