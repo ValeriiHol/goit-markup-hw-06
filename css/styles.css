@@ -807,7 +807,7 @@ ul {
   margin-bottom: 0; */
 
 /* --------------------modal-backdrop------------- */
-  .modal-backdrop {
+.modal-backdrop {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -816,13 +816,13 @@ ul {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.2);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+}
   
-  .modal-backdrop.is-hidden .modal {
+.modal-backdrop.is-hidden .modal {
     transform: scale(1);
-  }
+}
   
-  .modal {
+.modal {
     width: 528px;
     position: absolute;
     top: 50%;
@@ -832,9 +832,9 @@ ul {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--button-filtr-font-active);
     border-radius: 4px;
-  }
+}
   
-  .modal .close-sign {
+.modal .close-sign {
     display: flex;
     position: absolute;
     justify-content: center;
@@ -847,22 +847,27 @@ ul {
     background-color: var(--button-filtr-font-active);
     border-radius: 50%;
     cursor: pointer;
-
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .is-hidden {
+.is-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-  }
+}
   
-  .modal .close-sign .svg-close {
+.modal .close-sign .svg-close {
     fill: var(--header-logo-last-color);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-.modal .close-sign .svg-close:hover {
-  fill: var(--accent-color) ;
 }
+.modal .close-sign:hover {
+    border: 1px solid var(--accent-color);
+}
+  
+.modal .close-sign:hover .svg-close {
+  fill: var(--accent-color);
+}
+
 /* modal-form input */
 .modal-title {
   color: var(--button-filtr-font);
@@ -888,7 +893,7 @@ ul {
     font-size: 16px;
     color: var(--title-text-color);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    outline: 0;  /* вот точ то меня сбивало и не окрашивало бордер в голубой */
+    outline: 0;  /* вот то что меня сбивало и не окрашивало бордер в голубой */
     }
   
   .modal-input:hover, .modal-input:focus, 
@@ -907,6 +912,7 @@ ul {
     font-size: 12px;
     line-height: calc(14 / 12);
     color: rgba(117, 117, 117, 0.5);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .modal-textarea:hover, .modal-textarea:focus, 
@@ -953,6 +959,7 @@ ul {
   .checkbox-agree {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .checkbox-agree .icon-wrapper {
@@ -1003,11 +1010,11 @@ ul {
     border: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     margin: 30px auto 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     /* маржин равнения */
    }
 
    .modal-button:hover, .modal-button:active {
-    cursor: pointer;
     background-color: var(--button-bkg-mouse);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
    }
