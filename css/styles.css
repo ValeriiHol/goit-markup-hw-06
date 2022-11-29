@@ -899,6 +899,7 @@ ul {
   .modal-input:hover, .modal-input:focus, 
   .modal-input:focus-within, .modal-input:focus-visible  {
     border-color: var(--accent-color);
+    cursor: pointer;
   }
 
   .modal-textarea {
@@ -918,7 +919,7 @@ ul {
   .modal-textarea:hover, .modal-textarea:focus, 
   .modal-textarea:focus-within, .modal-textarea:focus-visible  {
     border: 1px solid var(--accent-color);
-    outline: 2px red;
+    cursor: pointer;
   }
 
   .modal-label  {
@@ -1017,4 +1018,5 @@ ul {
 
    .modal-button:hover, .modal-button:active {
     background-color: var(--button-bkg-mouse);
+    cursor: pointer;
    }
